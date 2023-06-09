@@ -1,5 +1,5 @@
 import { CartContext } from "@contexts/CartContext";
-import { notificationActionPromise } from "@helpers/toast";
+import { notificationSuccess } from "@helpers/toast";
 import { ProductInterface } from "@interfaces/product";
 import { useContext } from "react";
 
@@ -7,11 +7,9 @@ const CardFooterDetail = ({ product }: CardFooterDetailProps) => {
   const { addToCart, isItemInCart } = useContext(CartContext);
 
   const addProduct = () => {
-    notificationActionPromise(addToCart(product), {
-      pending: "Agregando al carrito ...",
-      success: "Producto agregado al carrito",
-      msgError: "Error al agregar al carrito",
-    });
+    addToCart(product);
+
+    notificationSuccess("Producto agregado al carrito");
   };
 
   if (!product.stock)

@@ -1,5 +1,4 @@
 import { ProductInterface } from "@interfaces/product";
-import ListCategoryProduct from "@molecules/card/ListCategoryProduct";
 import { Link } from "react-router-dom";
 
 const CardBody = ({ product }: CardBodyProps) => {
@@ -11,7 +10,6 @@ const CardBody = ({ product }: CardBodyProps) => {
       <p className="text-sm text-gray-500 line-clamp-3">
         {product.description}
       </p>
-      {/* <ListCategoryProduct categories={product.category} /> */}
     </div>
   );
 };

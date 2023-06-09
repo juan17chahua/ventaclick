@@ -1,3 +1,4 @@
+import { ProductInterface } from "@interfaces/product";
 import { createContext, useState } from "react";
 
 const IGV_RATE = 0.18;
@@ -13,7 +14,7 @@ export interface CartItem {
 
 interface CartContextProps {
   cartItems: CartItem[];
-  addToCart: (item: CartItem) => void;
+  addToCart: (item: ProductInterface) => void;
   removeFromCart: (itemId: number) => void;
   clearCart: () => void;
   isItemInCart: (itemId: number) => boolean;
@@ -42,23 +43,7 @@ export const CartContext = createContext<CartContextProps>(
 export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  // const addToCart = (item: CartItem) => {
-  //   const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
-
-  //   if (existingItem) {
-  //     setCartItems((prevItems) =>
-  //       prevItems.map((cartItem) =>
-  //         cartItem.id === item.id
-  //           ? { ...cartItem, quantity: cartItem.quantity + 1 }
-  //           : cartItem
-  //       )
-  //     );
-  //   } else {
-  //     setCartItems([...cartItems, { ...item, quantity: 1 }]);
-  //   }
-  // };
-
-  const addToCart = (item: CartItem) => {
+  const addToCart = (item: ProductInterface) => {
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (existingItem) {
@@ -108,44 +93,24 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   };
 
   const decrementQuantity = (itemId: number) => {
-    setCartItems(
-      (prevItems) =>
-        prevItems
-          .map((item) =>
-            item.id === itemId
-              ? {
-                  ...item,
-                  quantity: item.quantity - 1,
-                  subtotal: (item.quantity - 1) * (item.price - item.discount),
-                }
-              : item
-          )
-          .filter((item) => item.quantity > 0) // Eliminar elementos con cantidad cero
+    setCartItems((prevItems) =>
+      prevItems
+        .map((item) =>
+          item.id === itemId
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+                subtotal: (item.quantity - 1) * (item.price - item.discount),
+              }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
     );
   };
 
   const total = cartItems.reduce((acc, item) => acc + item.subtotal, 0);
 
   const totalWithIGV = total * (1 + IGV_RATE);
-
-  // const incrementQuantity = (itemId: number) => {
-  //   setCartItems((prevItems) =>
-  //     prevItems.map((item) =>
-  //       item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
-  //     )
-  //   );
-  // };
-
-  // const decrementQuantity = (itemId: number) => {
-  //   setCartItems(
-  //     (prevItems) =>
-  //       prevItems
-  //         .map((item) =>
-  //           item.id === itemId ? { ...item, quantity: item.quantity - 1 } : item
-  //         )
-  //         .filter((item) => item.quantity > 0) // Eliminar elementos con cantidad cero
-  //   );
-  // };
 
   const cartContextValues: CartContextProps = {
     cartItems,

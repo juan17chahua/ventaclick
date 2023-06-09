@@ -1,12 +1,11 @@
 import EmptyData from "@atoms/Empty/EmptyData";
 import { CartContext } from "@contexts/CartContext";
 import CartDetails from "common/templates/CartDetails";
-// import CartProduct from "common/templates/CartProduct";
 import TableProductCart from "common/templates/TableProductCart";
 import { useContext } from "react";
 
 const CartModule = () => {
-  const { cartItems, clearCart } = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
 
   if (!cartItems.length)
     return <EmptyData text="NO hay productos en el carrito" />;
