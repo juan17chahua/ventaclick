@@ -18,7 +18,30 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Type checking */
+    "baseUrl": "src",
+    "paths": {
+      "@organisms/*": ["common/components/organisms/*"],
+      "@molecules/*": ["common/components/molecules/*"],
+      "@atoms/*": ["common/components/atoms/*"],
+      "@components/*": ["common/components/*"],
+      "@interfaces/*": ["common/interfaces/*"],
+      "@constants/*": ["common/constants/*"],
+      "@contexts/*": ["common/contexts/*"],
+      "@services/*": ["common/services/*"],
+      "@helpers/*": ["common/helpers/*"],
+      "@assets/*": ["common/assets/*"],
+      "@helper/*": ["common/helper/*"],
+      "@hooks/*": ["common/hooks/*"],
+      "@mock/*": ["mock/*"],
+      // "@data/*": ["common/data/*"],
+      "@modules/*": ["modules/*"],
+      // "@api/*": ["common/api/*"],
+      "@styles/*": ["styles/*"],
+      "@pages/*": ["pages/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

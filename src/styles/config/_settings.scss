@@ -1,0 +1,7 @@
+.section-responsive {
+  @apply max-w-screen-2xl mx-auto;
+  @apply md:px-8;
+  @apply lg:px-16;
+  @apply xl:px-24;
+  @apply 2xl:px-32;
+}
