@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 
 const CardBody = ({ product }: CardBodyProps) => {
   return (
-    <div className="flex flex-col p-2 gap-3">
+    <div className="flex flex-col p-2 gap-2 flex-grow">
       <Link to={`/product/${product.slug}`}>
-        <h2 className="text-lg font-semibold">{product.name}</h2>
+        <h2 className="font-semibold">{product.name}</h2>
       </Link>
-      <p className="text-sm">{product.description}</p>
-      <ListCategoryProduct categories={product.category} />
+      <p className="text-sm text-gray-500 line-clamp-3">
+        {product.description}
+      </p>
+      {/* <ListCategoryProduct categories={product.category} /> */}
     </div>
   );
 };

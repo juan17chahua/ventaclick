@@ -1,20 +1,20 @@
+import EmptyData from "@atoms/Empty/EmptyData";
 import { CartContext } from "@contexts/CartContext";
-import CartProduct from "common/templates/CartProduct";
+import CartDetails from "common/templates/CartDetails";
+// import CartProduct from "common/templates/CartProduct";
+import TableProductCart from "common/templates/TableProductCart";
 import { useContext } from "react";
 
 const CartModule = () => {
   const { cartItems, clearCart } = useContext(CartContext);
 
-  if (!cartItems.length) return <div>NO hay productos en el carrito</div>;
+  if (!cartItems.length)
+    return <EmptyData text="NO hay productos en el carrito" />;
 
   return (
-    <div>
-      <button onClick={clearCart}>Limpiar carrito</button>
-      <div>
-        {cartItems.map((item) => (
-          <CartProduct key={item.id} item={item} />
-        ))}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-10">
+      <TableProductCart cartItems={cartItems} />
+      <CartDetails />
     </div>
   );
 };
