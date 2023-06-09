@@ -15,9 +15,7 @@ const HomeModule = () => {
     data = [],
     error,
     isLoading,
-  } = useQuery(["getProducts"], getProducts, {
-    refetchOnWindowFocus: false,
-  });
+  } = useQuery(["getProducts"], getProducts);
 
   if (isLoading) return <Loader />;
   if (error) return <EmptyError />;

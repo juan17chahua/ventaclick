@@ -2,7 +2,25 @@ import { CartContext } from "@contexts/CartContext";
 import { useContext } from "react";
 
 const CartDetails = () => {
-  const { total, totalWithIGV } = useContext(CartContext);
+  const { total, totalWithIGV, cartItems } = useContext(CartContext);
+
+  const sendWhatsApp = () => {
+    const message = `Hola, quisiera hacer un pedido por un total de S/. ${totalWithIGV.toFixed(
+      2
+    )} \n \n`;
+
+    const textProduct = cartItems
+      .map(
+        (product) =>
+          `${product.name} (${product.quantity}): S/. ${product.subtotal}`
+      )
+      .join("\n");
+    const mensajeCompleto = message + textProduct;
+
+    const url = `https://wa.me/?text=${encodeURIComponent(mensajeCompleto)}`;
+
+    window.open(url, "_blank");
+  };
 
   return (
     <div className="w-full lg:col-span-2 h-fit sticky top-5 flex flex-col gap-8">
@@ -23,7 +41,10 @@ const CartDetails = () => {
         </p>
       </div>
 
-      <button className="px-2 py-1.5 bg-green-500 hover:bg-green-600 text-white rounded-md">
+      <button
+        className="px-2 py-1.5 bg-green-500 hover:bg-green-600 text-white rounded-md"
+        onClick={sendWhatsApp}
+      >
         Realizar pedido
       </button>
     </div>

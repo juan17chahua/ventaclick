@@ -48,7 +48,7 @@ const TableProductCart = ({ cartItems }: TableProductCartProps) => {
                     {item.name}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap text-center">
-                    {`S/. ${item.price.toFixed(2)}`}
+                    {`S/. ${(item.price - item.discount).toFixed(2)}`}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-800 whitespace-nowrap text-center">
                     {`S/. ${item.discount.toFixed(2)}`}

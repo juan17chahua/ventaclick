@@ -8,7 +8,7 @@
     "category": ["Accesorios"],
     "price": 100,
     "discount": 10,
-    "stock": 10
+    "stock": 0
   },
   {
     "id": 2,
@@ -78,116 +78,6 @@
   },
   {
     "id": 8,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 9,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 10,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 11,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 12,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 13,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 14,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 15,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 16,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 17,
-    "name": "HUAWEI",
-    "slug": "smartwatch-reloj-huawei",
-    "image": "/src/assets/smartwatch-reloj-huawei.png",
-    "description": "Smartwatch Huawei Watch Fit 2, resistente al agua, máx. 10 días, modos deportivos, negro",
-    "category": ["Celulares", "Accesorio", "Smartwatch"],
-    "price": 800,
-    "discount": 80,
-    "stock": 80
-  },
-  {
-    "id": 18,
     "name": "HUAWEI",
     "slug": "smartwatch-reloj-huawei",
     "image": "/src/assets/smartwatch-reloj-huawei.png",

@@ -6,6 +6,6 @@ export const getProducts = async () => {
     const products = await readJSONFile(URL_JSON_PRODUCTS);
     return products;
   } catch (error) {
-    throw new Error(`Error reading JSON file: ${error}`);
+    console.error(`Error reading JSON file: ${error}`);
   }
 };

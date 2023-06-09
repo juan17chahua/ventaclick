@@ -3,7 +3,7 @@ import { notificationActionPromise } from "@helpers/toast";
 import { ProductInterface } from "@interfaces/product";
 import { useContext } from "react";
 
-const CardFooter = ({ product }: CardFooterProps) => {
+const CardFooterDetail = ({ product }: CardFooterDetailProps) => {
   const { addToCart, isItemInCart } = useContext(CartContext);
 
   const addProduct = () => {
@@ -16,30 +16,33 @@ const CardFooter = ({ product }: CardFooterProps) => {
 
   if (!product.stock)
     return (
-      <span className="flex justify-between items-center p-2 bg-slate-200/50 mt-3 text-sm font-semibold text-red-500">
-        Agotado
+      <span className="text-center p-2 bg-red-100/50 mt-3 font-semibold text-red-500">
+        Producto agotado :(
       </span>
     );
 
   return (
-    <div className="flex justify-between items-center p-2 bg-slate-200/50 mt-3 text-sm font-semibold">
+    <div className="flex justify-between items-center p-2 mt-3 text-sm font-semibold">
       {isItemInCart(product.id) && (
-        <span className="text-green-700">En carrito</span>
+        <span className="w-full text-center p-2 bg-green-100/70 mt-3 font-semibold text-green-700">
+          Producto agregado al carrito :)
+        </span>
       )}
 
       {!isItemInCart(product.id) && (
-        <button className="text-blue-600" onClick={addProduct}>
-          {`S/. ${product.price - product.discount}`}
+        <button
+          className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-md text-base"
+          onClick={addProduct}
+        >
+          Agregar al carrito
         </button>
       )}
-
-      <p className="line-through text-red-400">{`S/. ${product.discount}`}</p>
     </div>
   );
 };
 
-type CardFooterProps = {
+type CardFooterDetailProps = {
   product: ProductInterface;
 };
 
-export default CardFooter;
+export default CardFooterDetail;
